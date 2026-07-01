@@ -24,6 +24,19 @@ Rebuilt from a salvaged Eufy RoboVac with:
 - Xbox Series controller via Bluetooth
 - Real time room mapping transmitted to PC
 - 3D printed chassis with TPU tyres
-
+## V2 Roadmap
+- [x] Basic obstacle avoidance (V1)
+- [x] Servo scanning with HC-SR04
+- [ ] IMU integration
+- [ ] Encoder odometry
+- [ ] Increase scanning resolution
+- [ ] ESP32 WiFi integration
+- [ ] Xbox controller via Bluetooth
+- [ ] Room mapping algorithm
+- [ ] Real time map transmission to PC
+- [ ] Python map visualisation
+- [ ] Pathfinding to target coordinates
+- [ ] 3D printed V2 chassis
+- [ ] TB6612FNG motor driver upgrade
 ## Status
 V1 complete. V2 actively in development.
