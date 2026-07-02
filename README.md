@@ -27,9 +27,9 @@ Rebuilt from a salvaged Eufy RoboVac with:
 ## V2 Roadmap
 - [x] Basic obstacle avoidance (V1)
 - [x] Servo scanning with HC-SR04
-- [ ] IMU integration
+- [x] IMU integration
 - [ ] Encoder odometry
-- [ ] Increase scanning resolution
+- [x] Increase scanning resolution
 - [ ] ESP32 WiFi integration
 - [ ] Xbox controller via Bluetooth
 - [ ] Room mapping algorithm
