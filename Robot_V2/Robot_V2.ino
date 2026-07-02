@@ -1,4 +1,8 @@
+enum Mode { AUTO,MANUAL,NAVIGATE};
+Mode currentMode = AUTO;
+
 void setup() {
+
   setupServo();
   setupMotors();
   setupLED();
@@ -9,21 +13,33 @@ void setup() {
 
 void loop() 
 {
-  motorsOn();
-  long dis = getDistance();
-  if(dis<10)
-  {
-    stopMotors();
-    delay(100);
-    moveBackward();
-    delay(500);
-    stopMotors();
-    servoScan();
-  }
-  else
-  {
-    moveForward();
-  }
+
+
+ if (currentMode != lastMode) 
+ {
+   setModeColour();
+   lastMode = currentMode;
+ }
+ switch(currentMode)
+ {
+    case AUTO:c:\Users\finni\Documents\Arduino\Robot_V2\UltraSonic.ino
+      turnLedGreen();
+      autoLoop();
+      break;
+
+    case MANUAL:
+      turnLedBlue();
+      manualLoop();
+      break;
+
+    case NAVIGATE:
+      turnLedPurple();
+      navigateLoop();
+      break;
+
+      default: turnLedGreen();autoLoop();
+
+ }
 
  
 }

@@ -2,6 +2,8 @@
 #define GREEN 10
 #define RED 11
 
+
+
 void setupLED()
 {
   pinMode(RED, OUTPUT);
@@ -12,32 +14,52 @@ void setupLED()
   digitalWrite(BLUE, LOW);
 }
 
-
-
-void turnLedGreen()
-{
-  analogWrite(RED, 0);
-  analogWrite(GREEN, 255);
-  analogWrite(BLUE, 0);
+void setRGB(int r, int g, int b) {
+    currentR = r;
+    currentG = g;
+    currentB = b;
+    analogWrite(RED,   r);
+    analogWrite(GREEN, g);
+    analogWrite(BLUE,  b);
 }
 
-void turnLedRed()
+void blinkLED() 
 {
-  analogWrite(RED, 255);
-  analogWrite(GREEN, 0);
-  analogWrite(BLUE, 0);
+    turnLedOff();
+    delay(100);
+    setRGB(currentR, currentG, currentB);
+    delay(100);
 }
 
-void turnLedBlue()
+void setModeColour() 
 {
-  analogWrite(RED, 0);
-  analogWrite(GREEN, 0);
-  analogWrite(BLUE, 255);
+ switch(currentMode)
+ {
+    case AUTO:
+      turnLedGreen();
+      break;
+
+    case MANUAL:
+      turnLedBlue();
+      break;
+
+    case NAVIGATE:
+      turnLedPurple();
+      break;
+
+      default: turnLedGreen();
+
+ }
 }
 
-void turnLedOff() 
-{
-  analogWrite(RED, 0);
-  analogWrite(GREEN, 0);
-  analogWrite(BLUE, 0);
-}
+
+
+
+
+
+void turnLedPurple() { setRGB(133, 29, 145);  }
+void turnLedGreen()  { setRGB(20, 245, 16);   }
+void turnLedRed()    { setRGB(255, 10, 10);   }
+void turnLedBlue()   { setRGB(29, 173, 245);  }
+void turnLedYellow() { setRGB(227, 159, 20);  }
+void turnLedOff()    { setRGB(0, 0, 0);       }

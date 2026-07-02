@@ -49,6 +49,12 @@ void moveForward() {
   digitalWrite(in4, HIGH);
 }
 
+void turnSpeed()
+{
+  analogWrite(enableA, 150);
+  analogWrite(enableB, 150);
+}
+
 void stopMotors() 
 {
   digitalWrite(in1, LOW);
@@ -75,7 +81,28 @@ void turnRight()
 
 void turn (int x)
 {
-  
+  if (x<90)
+  {
+    turnSpeed();
+    while(abs(updateIMU()-x)>3)
+    {
+      turnLeft();
+    }
+    stopMotors();
+  }
+
+  else if (x>90)
+  {
+      turnSpeed();
+
+    while(abs(updateIMU()-x)>3)
+    {
+      turnRight();
+    }
+    stopMotors();
+  }
+
+  else {moveForward();}
 }
 
 

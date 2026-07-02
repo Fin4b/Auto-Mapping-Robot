@@ -9,10 +9,12 @@ void setupIMU()
   delay(500);
   mpu.begin();
   mpu.calcOffsets();
+  mpu.update();
+  yawOffset = mpu.getAngleZ();
 }
 
 float updateIMU()
 {
   mpu.update();
-  return mpu.getAngleZ();
+  return mpu.getAngleZ()- yawOffset + 90;
 }
