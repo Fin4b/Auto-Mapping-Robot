@@ -17,7 +17,7 @@ A basic obstacle avoiding robot built with:
 
 ## CAD
 - Main chassis: designed in Fusion (original design)
-- <img width="1553" height="799" alt="image" src="https://github.com/user-attachments/assets/4f9e0489-0589-4c9a-af01-494db660cc42" />
+  <img width="1553" height="799" alt="image" src="https://github.com/user-attachments/assets/4f9e0489-0589-4c9a-af01-494db660cc42" />
 
 - Servo/HC-SR04 mount: downloaded from (https://www.printables.com/model/84061-ultrasonic-sensor-hc-sr04-mount-on-servo)
 - Wheels/tyres: downloaded from (https://makerworld.com/en/models/620695-tt-motor-wheel?from=search#profileId-544703)
