@@ -9,7 +9,7 @@ A basic obstacle avoiding robot built with:
 - HC-SR04 ultrasonic sensor with servo scanning
 - 3D printed chassis with TPU tyres
 
-- ## V1 Demo
+ ## V1 Demo
 [Watch V1 Demo on YouTube](https://youtube.com/shorts/Y9Q5X9wWSWw?feature=share)
 
 ## V1 Wiring Diagram
