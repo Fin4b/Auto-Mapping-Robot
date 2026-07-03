@@ -2,9 +2,6 @@
 #define GREEN 10
 #define RED 11
 
-int currentR = 0;
-int currentG = 0;
-int currentB = 0;
 
 
 void setupLED()
@@ -47,7 +44,7 @@ void setModeColour()
       break;
 
     case NAVIGATE:
-      turnLedYellow();
+      turnLedPurple();
       break;
 
       default: turnLedGreen();
@@ -65,9 +62,4 @@ void turnLedGreen()  { setRGB(20, 245, 16);   }
 void turnLedRed()    { setRGB(255, 10, 10);   }
 void turnLedBlue()   { setRGB(29, 173, 245);  }
 void turnLedYellow() { setRGB(227, 159, 20);  }
-void turnLedOff()   
- { 
-    analogWrite(RED,0);
-    analogWrite(GREEN,0);
-    analogWrite(BLUE,0);
- }
+void turnLedOff()    { setRGB(0, 0, 0);       }
