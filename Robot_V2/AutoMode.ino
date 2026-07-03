@@ -12,7 +12,7 @@ void autoLoop()
     stopMotors();
     turnLedPurple();
     servoScan();
-    setModeColour() 
+    setModeColour();
   }
   else
   {

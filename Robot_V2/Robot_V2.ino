@@ -1,5 +1,6 @@
 enum Mode { AUTO,MANUAL,NAVIGATE};
 Mode currentMode = AUTO;
+Mode lastMode = AUTO;
 
 void setup() {
 
@@ -23,7 +24,7 @@ void loop()
  }
  switch(currentMode)
  {
-    case AUTO:c:\Users\finni\Documents\Arduino\Robot_V2\UltraSonic.ino
+    case AUTO:
       turnLedGreen();
       autoLoop();
       break;

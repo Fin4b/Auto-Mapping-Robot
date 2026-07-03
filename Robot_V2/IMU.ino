@@ -2,6 +2,7 @@
 #include <Wire.h>
 
 MPU6050 mpu(Wire);
+float yawOffset = 0.0;
 
 void setupIMU()
 {
