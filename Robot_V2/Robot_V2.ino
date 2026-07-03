@@ -8,6 +8,7 @@ void setup() {
   setupLED();
   setupIMU();
   setupEncoder();
+  setupController();
 }
 
 
