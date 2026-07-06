@@ -15,7 +15,9 @@ void setup() {
 
 void loop() 
 {
-
+  robotData.yaw = updateIMU();
+  robotData.encRight = countRight;
+  robotData.encLeft = countLeft;
 
  if (currentMode != lastMode) 
  {
@@ -25,21 +27,18 @@ void loop()
  switch(currentMode)
  {
     case AUTO:
-      turnLedGreen();
       autoLoop();
       break;
 
     case MANUAL:
-      turnLedBlue();
       manualLoop();
       break;
 
     case NAVIGATE:
-      turnLedPurple();
       navigateLoop();
       break;
 
-      default: turnLedGreen();autoLoop();
+      default: autoLoop();
 
  }
 

@@ -51,6 +51,15 @@ void servoScan()
   blinkLED();
   delay(400);
 
+
+  robotData.scanning_Dis[0] = dis_0;
+  robotData.scanning_Dis[1] = dis_30;
+  robotData.scanning_Dis[2] = dis_60;
+  robotData.scanning_Dis[3] = dis_90;
+  robotData.scanning_Dis[4] = dis_120;
+  robotData.scanning_Dis[5] = dis_150;
+  robotData.scanning_Dis[6] = dis_180;
+  
   int bestAngle = direction(dis_0,dis_30,dis_60,dis_90,dis_120,dis_150,dis_180);
   turn(bestAngle);
 
