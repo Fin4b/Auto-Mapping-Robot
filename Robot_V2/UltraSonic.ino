@@ -1,9 +1,6 @@
-#include "SR04.h"
 
-#define TRIG_PIN A1
-#define ECHO_PIN A2
 
-SR04 distance = SR04(ECHO_PIN, TRIG_PIN);
+
 
 long getDistance()
 {

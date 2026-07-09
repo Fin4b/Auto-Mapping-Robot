@@ -1,6 +1,6 @@
-#define BLUE 9
-#define GREEN 10
-#define RED 11
+#define BLUE 32
+#define GREEN 33
+#define RED 5
 
 int currentR = 0;
 int currentG = 0;

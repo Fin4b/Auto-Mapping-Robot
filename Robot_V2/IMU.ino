@@ -1,8 +1,8 @@
-#include <MPU6050_light.h>
-#include <Wire.h>
 
-MPU6050 mpu(Wire);
+
+
 float yawOffset = 0.0;
+const int turnSpeed = 150;
 
 void setupIMU()
 {
@@ -19,3 +19,32 @@ float updateIMU()
   mpu.update();
   return mpu.getAngleZ()- yawOffset + 90;
 }
+
+void turn (int x)
+{
+  if (x<90)
+  {
+    setSpeedLeft(turnSpeed);
+    setSpeedRight(turnSpeed);
+    while(abs(updateIMU()-x)>3)
+    {
+      turnLeft();
+    }
+    stopMotors();
+  }
+
+  else if (x>90)
+  {
+      setSpeedLeft(turnSpeed);
+      setSpeedRight(turnSpeed);
+
+    while(abs(updateIMU()-x)>3)
+    {
+      turnRight();
+    }
+    stopMotors();
+  }
+
+  else {moveForward();}
+}
+

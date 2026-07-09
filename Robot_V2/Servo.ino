@@ -1,11 +1,11 @@
-#include <Servo.h>
 
-  int servoPin = A0;
-  Servo Servo1;
+
+  int servoPin = 4;
+  
 
 void setupServo()
 {
-  Servo1.attach(servoPin);
+  Servo1.attach(servoPin,500,2400);
   Servo1.write(90);
   delay(500);
 }
@@ -80,8 +80,11 @@ int direction (long a, long b, long c, long d, long e, long f,long g)
       }
     }
 return bestAngle;
-    
-  
+}
+
+void setServoAngle(int x)
+{
+  Servo1.write(x);
 }
 
 
