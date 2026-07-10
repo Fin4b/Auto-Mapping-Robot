@@ -1,6 +1,10 @@
+#include <Arduino.h>
+#include <Wire.h>
+#include <MPU6050_light.h>
 
-
-
+#include "IMU.h"
+#include "Motors.h"
+MPU6050 mpu(Wire);
 float yawOffset = 0.0;
 const int turnSpeed = 150;
 
@@ -22,6 +26,8 @@ float updateIMU()
 
 void turn (int x)
 {
+
+  updateIMU();
   if (x<90)
   {
     setSpeedLeft(turnSpeed);
@@ -29,6 +35,7 @@ void turn (int x)
     while(abs(updateIMU()-x)>3)
     {
       turnLeft();
+      delay(2);
     }
     stopMotors();
   }
@@ -41,6 +48,7 @@ void turn (int x)
     while(abs(updateIMU()-x)>3)
     {
       turnRight();
+      delay(2);
     }
     stopMotors();
   }

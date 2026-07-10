@@ -1,6 +1,11 @@
+#include<Arduino.h>
 
+#include "UltraSonic.h"
+#include "SR04.h"
+#define TRIG_PIN 17
+#define ECHO_PIN 16
 
-
+SR04 distance = SR04(ECHO_PIN, TRIG_PIN);
 
 long getDistance()
 {
