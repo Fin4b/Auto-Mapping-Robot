@@ -2,7 +2,7 @@
 #include <Arduino.h>
 #include "Motors.h"
 #include "LED.h"
-#include "Servo.h"
+#include "ServoControl.h"
 #include "UltraSonic.h"
 
 const long minDistance = 10;
@@ -11,7 +11,7 @@ void autoLoop()
 {
    motorsOn();
   long dis = getDistance();
-  if(dis<minDistance)
+  if(dis > 0 && dis < minDistance)
   {
     turnLedRed();
     stopMotors();

@@ -1,9 +1,14 @@
 #include "LED.h"
 #include<Arduino.h>
+#include "RobotData.h"
 
 #define BLUE 32
 #define GREEN 33
 #define RED 5
+
+#define RED_CH 0
+#define GREEN_CH 1
+#define BLUE_CH 2
 
 int currentR = 0;
 int currentG = 0;
@@ -12,21 +17,22 @@ int currentB = 0;
 
 void setupLED()
 {
-  pinMode(RED, OUTPUT);
-  pinMode(GREEN, OUTPUT);
-  pinMode(BLUE, OUTPUT);
-  digitalWrite(RED, LOW);
-  digitalWrite(GREEN, LOW);
-  digitalWrite(BLUE, LOW);
+  ledcSetup(RED_CH, 5000, 8);    // 5kHz, 8-bit resolution
+  ledcSetup(GREEN_CH, 5000, 8);
+  ledcSetup(BLUE_CH, 5000, 8);
+
+  ledcAttachPin(RED, RED_CH);
+  ledcAttachPin(GREEN, GREEN_CH);
+  ledcAttachPin(BLUE, BLUE_CH);
 }
 
 void setRGB(int r, int g, int b) {
     currentR = r;
     currentG = g;
     currentB = b;
-    analogWrite(RED,   r);
-    analogWrite(GREEN, g);
-    analogWrite(BLUE,  b);
+    ledcWrite(RED_CH, r);
+    ledcWrite(GREEN_CH, g);
+    ledcWrite(BLUE_CH, b);
 }
 
 void blinkLED() 

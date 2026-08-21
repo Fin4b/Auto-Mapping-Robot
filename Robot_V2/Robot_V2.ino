@@ -1,18 +1,22 @@
 #include "Encoders.h"
-#include <Bluepad32.h>
-#include <Wire.h>
-#include <MPU6050_light.h>
-#include <ESP32Servo.h>
+#include "IMU.h"
 #include "Motors.h"
+#include "LED.h"
+#include "Controller.h"
+#include "UltraSonic.h"
+#include "ServoControl.h"
+#include "AutoMode.h"
+#include "ManualMode.h"
+#include "NavigateMode.h"
+#include "RobotData.h"
+
 
   void setup() {
-     Serial.begin(115200);
-    delay(2000);
-    Serial.println("Booting...");
   Serial.begin(115200);
   Serial.println("Booting...");
   setupServo();
   setupMotors();
+  setUpUSS();
   setupLED();
   setupIMU();
   setupEncoder();

@@ -2,9 +2,10 @@
 #include <Arduino.h>
 
 #include "Servo.h"
+#include "ServoControl.h"
 #include "IMU.h"
 #include "LED.h"
-#include "Ultrasonic.h"
+#include "UltraSonic.h"
 #include "RobotData.h"
 
 int servoPin = 4;
@@ -23,7 +24,7 @@ void servoScan()
 
   for(int i=0;i<7;i++)
   {
-    Servo1.write(90);
+    Servo1.write(i);
     blinkLED();
     delay(400);
 

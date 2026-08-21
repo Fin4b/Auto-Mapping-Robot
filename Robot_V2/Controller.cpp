@@ -1,8 +1,8 @@
 #include <Arduino.h>
-#include<Bluepad32.h>
 
 #include "RobotData.h"
 #include "Controller.h"
+#include "Motors.h"
 
 ControllerPtr myController = nullptr;
 void onConnectedController(ControllerPtr ctl) 
@@ -25,10 +25,10 @@ void updateController()
     BP32.update();
     if (myController && myController->isConnected()) 
     {
-        if (myController->a()) currentMode = AUTO;  Serial.println("Auto mode");
-        if (myController->x()) currentMode = MANUAL;  Serial.println("Manual mode");
-        if (myController->y()) currentMode = NAVIGATE;  Serial.println("Navigate mode");
-        if (myController->b()) stopMotors();  Serial.println("Emergency Stop");
+        if (myController->a()) {currentMode = AUTO;  Serial.println("Auto mode");}
+        if (myController->x()) {currentMode = MANUAL;  Serial.println("Manual mode");}
+        if (myController->y()) {currentMode = NAVIGATE;  Serial.println("Navigate mode");}
+        if (myController->b()) {stopMotors();  Serial.println("Emergency Stop");}
         
         
     }

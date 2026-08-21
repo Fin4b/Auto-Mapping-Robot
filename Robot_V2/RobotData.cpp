@@ -1,16 +1,9 @@
+#include <Arduino.h>
 #include "RobotData.h"
+#include "Encoders.h"
+#include "IMU.h"
 
 
-enum Mode { AUTO,MANUAL,NAVIGATE};
 Mode currentMode = AUTO;
 Mode lastMode = AUTO;
-
-struct RobotData
-{
-  float yaw;
-  long encRight;
-  long encLeft;
-  long scanning_Dis[7];
-};
-
 RobotData robotData;

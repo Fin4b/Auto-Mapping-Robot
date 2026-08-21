@@ -7,6 +7,12 @@
 
 SR04 distance = SR04(ECHO_PIN, TRIG_PIN);
 
+
+void setUpUSS()
+{
+  pinMode(TRIG_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
+}
 long getDistance()
 {
   return distance.Distance();

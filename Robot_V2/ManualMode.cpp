@@ -4,7 +4,8 @@
 #include "ManualMode.h"
 #include "Controller.h"
 #include "Motors.h"
-#include "Servo.h"
+#include "ServoControl.h"
+#include "IMU.h"
 
  int servoAngle = 90;
  int speed = 0;
@@ -70,13 +71,13 @@ void setMotorRight(int speed)
 
 void updateServo()
 {
-  if(myController->R1() && servoAngle < 180)
+  if(myController->r1() && servoAngle < 180)
   {
     servoAngle += 10;
     setServoAngle(servoAngle);
   }
 
-  if(myController->L1() && servoAngle > 0)
+  if(myController->l1() && servoAngle > 0)
   {
     servoAngle -= 10;
     setServoAngle(servoAngle);
